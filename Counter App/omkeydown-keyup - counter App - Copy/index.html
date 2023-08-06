@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link Css -->
+    <link rel="stylesheet" href="./style.css">
+
+    <title>Increment and Decrement with onkeyUpDown Function - (Counter App)</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Main Container -->
+        <div class="main-container">
+            <div class="incrementAndDecrement">
+                <h1 class="counterHeading">Counter App <span>(onkeyUpDown)</span> </h1>
+                <!-- Decrement Button -->
+                <button class="minus" onkeyup="decrement()">Decrement by 1</button>
+                <!-- Counter Value -->
+                <label class="Countervalue">0</label>
+                <!-- Increment Button -->
+                <button class="plus" onkeydown="increment()">Increment by 1</button>
+            </div>
+            <!-- Reset Button -->
+            <div class="reset">
+                <button class="reset" onkeypress="reset()">Reset Value</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Counter App with onkeyUpDown Function
+        const incrementBtn = document.querySelector(".plus")
+        const decrementBtn = document.querySelector(".minus")
+        const resetBtn = document.querySelector(".reset")
+        const counterValue = document.querySelector(".Countervalue")
+
+        // First click the button of increment with mouse then work onkeyup 
+        let totalValue = 0
+        function increment() {
+            totalValue += 1
+            counterValue.innerHTML = totalValue
+        }
+
+        // First click the button of decrement with mouse then work onkeydown
+        function decrement() {
+            if (counterValue.innerHTML != 0) {
+                totalValue -= 1
+                counterValue.innerHTML = totalValue
+            }
+        }
+
+        // On Key Press Function (onkeypress)
+        function reset() {
+            totalValue = 0
+            counterValue.innerHTML = totalValue
+        }
+    </script>
+
+</body>
+
+</html>
